@@ -1,11 +1,11 @@
-from flask import Flask
+from flask import Flask, jsonify
 import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Home Assistant Flask API is running"
+    return jsonify({"status": "online"})
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
